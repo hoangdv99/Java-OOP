@@ -1,0 +1,40 @@
+package hust.soict.hedspi.aims.media;
+
+import java.util.ArrayList;
+
+public class CompactDisc extends Disc {
+	public CompactDisc(String title) {
+		super(title);
+	}
+	private String artist;
+	private ArrayList<Track> tracks = new ArrayList<Track>();
+	public String getArtist() {
+		return artist;
+	}
+	
+	public void addTrack(Track addItem) {
+		if(!(tracks.contains(addItem))) {
+			tracks.add(addItem);
+			System.out.println("Added!");
+		}else {
+			System.out.println("Track is existed!");
+		}
+	}
+	
+	public void removeTrack(Track removeItem) {
+		if(tracks.contains(removeItem)) {
+			tracks.remove(removeItem);
+			System.out.println("Removed!");
+		}else {
+			System.out.println("Track is not existing!");
+		}
+	}
+	
+	public int getLength() {
+		int length = 0;
+		for (int i = 0; i < tracks.size(); i++) {
+			length += tracks.get(i).getLength();
+		}
+		return length;
+	}
+}

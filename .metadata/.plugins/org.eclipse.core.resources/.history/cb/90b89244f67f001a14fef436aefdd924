@@ -1,0 +1,52 @@
+package hust.soict.hedspi.aims.order;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import hust.soict.hedspi.aims.media.Media;
+
+public class Order {
+	private List<Media> itemsOrdered = new ArrayList<Media>();
+	public Order() {
+		super();
+	}
+	public float totalCost() {
+		float total = 0;
+		Media item;
+		Iterator<Media> ite = itemsOrdered.iterator();
+		while(ite.hasNext()) {
+			item = (Media)(ite.next());
+			total += item.getCost();
+		}
+		return total;
+	}
+
+	public void addMedia(Media addItem) {
+		boolean flag = true;
+		for (int i = 0; i < itemsOrdered.size(); i++) {
+			if(itemsOrdered.get(i).getId() == addItem.getId()) {
+				System.out.println("Id is existed");
+				flag = false;
+			}
+		}
+		if (flag == true) {
+			itemsOrdered.add(addItem);
+			System.out.println("Added!");
+		}
+	}
+	
+	public void removeMedia(int id) {
+		for (int i = 0; i < itemsOrdered.size(); i++) {
+			if(itemsOrdered.get(i).getId() == id) {
+				itemsOrdered.remove(i);
+				System.out.println("Removed!");
+			}
+		}
+	}
+	public void showOrder() {
+		for (int i = 0; i < itemsOrdered.size(); i++) {
+			System.out.println(itemsOrdered.get(i));
+		}
+	}
+}
+

@@ -1,0 +1,23 @@
+package hust.soict.hedspi.aims.media;
+public class DigitalVideoDisc extends Media{
+	public DigitalVideoDisc() {
+		super();
+	}
+	
+	private String directory;
+	private int length;
+	
+	public String getDirectory() {
+		return directory;
+	}
+	public void setDirectory(String directory) {
+		this.directory = directory;
+	}
+	public int getLength() {
+		return length;
+	}
+	public void setLength(int length) {
+		this.length = length;
+	}
+}
+

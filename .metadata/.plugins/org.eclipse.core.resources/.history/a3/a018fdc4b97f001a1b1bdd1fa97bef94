@@ -1,0 +1,52 @@
+package hust.soict.hedspi.aims.media;
+public class DigitalVideoDisc extends Media{
+	public DigitalVideoDisc(String title, String category, String directory, int length, float cost) {
+		super();
+		this.title = title;
+		this.category = category;
+		this.directory = directory;
+		this.length = length;
+		this.cost = cost;
+	}
+	public DigitalVideoDisc(String title, String category, String directory) {
+		super();
+		this.title = title;
+		this.category = category;
+		this.directory = directory;
+	}
+	public DigitalVideoDisc(String title, String category) {
+		super();
+		this.title = title;
+		this.category = category;
+	}
+	public DigitalVideoDisc(String title) {
+		super();
+		this.title = title;
+	}
+	
+	private String directory;
+	private int length;
+	public String getDirectory() {
+		return directory;
+	}
+	public void setDirectory(String directory) {
+		this.directory = directory;
+	}
+	public int getLength() {
+		return length;
+	}
+	public void setLength(int length) {
+		this.length = length;
+	}
+	public boolean search(String title) {
+		String searchTitle = title.toLowerCase();
+		String diskTitle = this.title.toLowerCase();
+		if(diskTitle.indexOf(searchTitle) != -1) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+}
+

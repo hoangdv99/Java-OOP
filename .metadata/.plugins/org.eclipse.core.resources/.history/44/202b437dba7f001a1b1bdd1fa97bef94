@@ -1,0 +1,34 @@
+package hust.soict.hedspi.aims.order;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Order {
+	private List<Media> itemsOrdered = new ArrayList<Media>();
+	public Order() {
+		super();
+	}
+	public float totalCost() {
+		float sum = 0;
+		for (Media i: this.itemsOrdered) {
+			sum += i.getCost();
+		}
+		return sum;
+	}
+
+	public void addMedia(Media addItem) {
+		if(!(itemsOrdered.contains(addItem))) {
+			itemsOrdered.add(addItem);
+		}
+	}
+	
+	public void removeMedia(Media removeItem) {
+		boolean check = itemsOrdered.contains(removeItem);
+		if(!check) {
+			System.out.println("Author is not existed!");
+		}else {
+			itemsOrdered.remove(removeItem);
+		}
+		
+	}
+}
+

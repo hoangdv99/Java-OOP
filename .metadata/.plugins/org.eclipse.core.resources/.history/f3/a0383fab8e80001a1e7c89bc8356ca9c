@@ -1,0 +1,16 @@
+package hust.soict.hedspi.aims.media;
+
+public class Disc {
+
+	public Disc() {
+		// TODO Auto-generated constructor stub
+	}
+	private int length;
+	private String director;
+	public int getLength() {
+		return length;
+	}
+	public String getDirector() {
+		return director;
+	}
+}
